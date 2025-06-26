@@ -17,29 +17,39 @@
     combos {
         compatible = "zmk,combos";
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
+        copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <13 12>;
         };
 
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
+        paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <18 19>;
         };
 
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
+        cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <3 2>;
         };
 
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
+        paste_history {
+            bindings = <&kp LG(V)>;
+            key-positions = <6 7>;
         };
 
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <40 41>;
+        };
+
+        tab_right {
+            bindings = <&kp LC(TAB)>;
+            key-positions = <17 18>;
+        };
+
+        tab_left {
+            bindings = <&kp LC(LS(TAB))>;
+            key-positions = <14 13>;
         };
     };
 
@@ -62,7 +72,7 @@
             tapping-term-ms = <200>;
         };
 
-    scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
@@ -107,19 +117,19 @@
 
         ARROW {
             bindings = <
-&trans  &trans              &kp UP    &trans         &trans                      &kp HOME  &trans        &kp UP    &trans         &trans
-&trans  &kp LEFT            &kp DOWN  &kp RIGHT      &trans  &trans      &trans  &kp END   &kp LEFT      &kp DOWN  &kp RIGHT      &trans
-&trans  &kp LG(LEFT_ARROW)  &trans    &kp LG(RIGHT)  &trans  &trans      &trans  &trans    &kp LG(LEFT)  &trans    &kp LG(RIGHT)  &trans
-&trans  &trans              &trans    &trans         &trans  &trans      &trans  &trans                                           &trans
+&trans  &trans              &kp UP    &trans         &trans                      &kp HOME  &trans        &kp UP     &trans         &kp LC(W)
+&trans  &kp LEFT            &kp DOWN  &kp RIGHT      &trans  &trans      &trans  &kp END   &kp LEFT      &kp DOWN   &kp RIGHT      &trans
+&trans  &kp LG(LEFT_ARROW)  &trans    &kp LG(RIGHT)  &trans  &trans      &trans  &trans    &kp LG(LEFT)  &kp LG(D)  &kp LG(RIGHT)  &trans
+&trans  &trans              &trans    &trans         &trans  &trans      &trans  &trans                                            &trans
             >;
         };
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4  &mkp MB5  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp LC(Z)  &kp LC(Y)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1   &mkp MB2   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4   &mkp MB5   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
 
@@ -134,10 +144,10 @@
 
         Bluetooth {
             bindings = <
-&kp C_VOLUME_UP    &kp C_BRI_INC  &trans  &trans  &trans                              &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp C_VOLUME_DOWN  &kp C_BRI_DEC  &trans  &trans  &trans  &trans      &trans          &trans        &trans        &trans        &trans        &trans
-&kp C_MUTE         &trans         &trans  &trans  &trans  &trans      &bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans             &trans         &trans  &trans  &trans  &trans      &trans          &trans                                                  &none
+&kp C_VOLUME_UP    &kp C_BRI_INC  &trans  &trans  &trans                                   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&kp C_VOLUME_DOWN  &kp C_BRI_DEC  &trans  &trans  &trans  &bootloader      &bootloader     &trans        &trans        &trans        &trans        &trans
+&kp C_MUTE         &trans         &trans  &trans  &trans  &trans           &bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans             &trans         &trans  &trans  &trans  &trans           &trans          &trans                                                  &none
             >;
         };
     };
