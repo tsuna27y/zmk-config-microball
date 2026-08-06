@@ -1,8 +1,10 @@
 #include <input/processors.dtsi>
+
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 #include <dt-bindings/zmk/pointing.h>
 
 #define MOUSE 4
@@ -163,10 +165,10 @@
 
         SYMBOL {
             bindings = <
-&trans  &none   &kp LS(NUMBER_6)  &kp LS(N5)        &trans                      &kakko1  &kp LS(NUMBER_8)       &kp LS(NUMBER_9)  &trans            &trans
-&trans  &none   &kp LS(NUMBER_4)  &kp LEFT_BRACKET  &trans  &trans      &trans  &kakko2  &kp RIGHT_BRACKET      &kp NUHS          &kp SEMICOLON     &kp SQT
-&trans  &none   &kp EQUAL         &kp LS(INT1)      &trans  &trans      &trans  &kakko3  &kp LS(RIGHT_BRACKET)  &kp LS(NUHS)      &kp LS(NUMBER_7)  &kp LS(NUMBER_2)
-&trans  &trans  &trans            &trans            &trans  &trans      &trans  &trans                                                              &trans
+&trans  &none   &kp LS(NUMBER_6)  &kp LS(N5)        &trans                      &trans  &kakko1  &kp LESS_THAN  &kp GREATER_THAN  &trans
+&trans  &none   &kp LS(NUMBER_4)  &kp LEFT_BRACKET  &trans  &trans      &trans  &trans  &kakko2  &kp SEMICOLON  &kp SQT           &trans
+&trans  &none   &kp EQUAL         &kp LS(INT1)      &trans  &trans      &trans  &trans  &kakko3  &kp LS(N7)     &kp LS(NUMBER_2)  &trans
+&trans  &trans  &trans            &trans            &trans  &trans      &trans  &trans                                            &trans
             >;
         };
 
