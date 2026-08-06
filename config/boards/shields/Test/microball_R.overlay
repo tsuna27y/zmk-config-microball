@@ -13,21 +13,14 @@
 &zip_temp_layer {
     require-prior-idle-ms = <200>;
     excluded-positions = <
-        18 // J
-        19 // K
+        18 // J左クリック
+        19 // K右クリック
+        30 // M戻る
+        31 // ,進む
         22 // Shift
         34 // Ctrl
         42 // Delete
     >;
-};
-
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-
-        input-processors = <&zip_temp_layer 4 10000>;
-    };
 };
 
 &default_transform {
@@ -42,14 +35,6 @@
             , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
-};
-
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-
-    };
 };
 
 &pinctrl {
