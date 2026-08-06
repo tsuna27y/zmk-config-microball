@@ -76,6 +76,27 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_exit_AML";
         };
+
+        kakko1: kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N8) &kp LS(N9) &kp LEFT>;
+            label = "KAKKO";
+        };
+
+        kakko2: kakko2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_BRACKET &kp NUHS &kp LEFT>;
+            label = "KAKKO2";
+        };
+
+        kakko3: kakko3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(RIGHT_BRACKET) &kp LS(NUHS) &kp LEFT>;
+            label = "KAKKO3";
+        };
     };
 
     behaviors {
@@ -94,6 +115,7 @@
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
             // 追加: スクロールのタップ時間を設定 (20ms)
+
             tap-ms = <20>;
         };
 
@@ -141,10 +163,10 @@
 
         SYMBOL {
             bindings = <
-&trans  &none   &kp LS(NUMBER_6)  &kp LS(N5)        &trans                      &trans  &kp LS(NUMBER_8)       &kp LS(NUMBER_9)  &trans            &trans
-&trans  &none   &kp LS(NUMBER_4)  &kp LEFT_BRACKET  &trans  &trans      &trans  &trans  &kp RIGHT_BRACKET      &kp NUHS          &kp SEMICOLON     &kp SQT
-&trans  &none   &kp EQUAL         &kp LS(INT1)      &trans  &trans      &trans  &trans  &kp LS(RIGHT_BRACKET)  &kp LS(NUHS)      &kp LS(NUMBER_7)  &kp LS(NUMBER_2)
-&trans  &trans  &trans            &trans            &trans  &trans      &trans  &trans                                                             &trans
+&trans  &none   &kp LS(NUMBER_6)  &kp LS(N5)        &trans                      &kakko1  &kp LS(NUMBER_8)       &kp LS(NUMBER_9)  &trans            &trans
+&trans  &none   &kp LS(NUMBER_4)  &kp LEFT_BRACKET  &trans  &trans      &trans  &kakko2  &kp RIGHT_BRACKET      &kp NUHS          &kp SEMICOLON     &kp SQT
+&trans  &none   &kp EQUAL         &kp LS(INT1)      &trans  &trans      &trans  &kakko3  &kp LS(RIGHT_BRACKET)  &kp LS(NUHS)      &kp LS(NUMBER_7)  &kp LS(NUMBER_2)
+&trans  &trans  &trans            &trans            &trans  &trans      &trans  &trans                                                              &trans
             >;
         };
 
