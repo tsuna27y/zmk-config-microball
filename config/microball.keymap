@@ -51,6 +51,24 @@
             bindings = <&kp LC(LS(TAB))>;
             key-positions = <14 13>;
         };
+
+        kakko1en {
+            bindings = <&kakko1en>;
+            key-positions = <6 7>;
+            layers = <2>;
+        };
+
+        kakko2en {
+            bindings = <&kakko2en>;
+            key-positions = <18 19>;
+            layers = <2>;
+        };
+
+        kakko3en {
+            bindings = <&kakko3en>;
+            key-positions = <30 31>;
+            layers = <2>;
+        };
     };
 
     macros {
@@ -79,25 +97,46 @@
             label = "KP_exit_AML";
         };
 
-        kakko1: kakko {
+        kakko1jp: kakko {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(N8) &kp LS(N9) &kp LEFT>;
+            bindings = <&kp INT_HENKAN &kp LS(N8) &kp LS(N9) &kp ENTER &kp LEFT>;
             label = "KAKKO";
         };
 
-        kakko2: kakko2 {
+        kakko2jp: kakko2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RIGHT_BRACKET &kp NUHS &kp LEFT>;
+            bindings = <&kp INTERNATIONAL_4 &kp RIGHT_BRACKET &kp NUHS &kp ENTER &kp LEFT>;
             label = "KAKKO2";
         };
 
-        kakko3: kakko3 {
+        kakko3jp: kakko3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(RIGHT_BRACKET) &kp LS(NUHS) &kp LEFT>;
+            bindings = <&kp INTERNATIONAL_4 &kp LS(RIGHT_BRACKET) &kp LS(NUHS) &kp ENTER &kp LEFT>;
             label = "KAKKO3";
+        };
+
+        kakko1en: kakko1en {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp LS(N8) &kp LS(N9) &kp LEFT>;
+            label = "KAKKO1EN";
+        };
+
+        kakko2en: kakko2en {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp RIGHT_BRACKET &kp NUHS &kp LEFT>;
+            label = "KAKKO2EN";
+        };
+
+        kakko3en: kakko3en {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp LS(RIGHT_BRACKET) &kp LS(NUHS) &kp LEFT>;
+            label = "KAKKO3EN";
         };
     };
 
@@ -165,10 +204,10 @@
 
         SYMBOL {
             bindings = <
-&trans  &none   &kp LS(NUMBER_6)  &kp LS(N5)        &trans                      &trans  &kakko1  &kp LESS_THAN  &kp GREATER_THAN  &trans
-&trans  &none   &kp LS(NUMBER_4)  &kp LEFT_BRACKET  &trans  &trans      &trans  &trans  &kakko2  &kp SEMICOLON  &kp SQT           &trans
-&trans  &none   &kp EQUAL         &kp LS(INT1)      &trans  &trans      &trans  &trans  &kakko3  &kp LS(N7)     &kp LS(NUMBER_2)  &trans
-&trans  &trans  &trans            &trans            &trans  &trans      &trans  &trans                                            &trans
+&trans  &none   &kp LS(NUMBER_6)  &kp LS(N5)        &trans                      &trans  &kakko1jp  &kp LESS_THAN  &kp GREATER_THAN  &trans
+&trans  &none   &kp LS(NUMBER_4)  &kp LEFT_BRACKET  &trans  &trans      &trans  &trans  &kakko2jp  &kp SEMICOLON  &kp SQT           &trans
+&trans  &none   &kp EQUAL         &kp LS(INT1)      &trans  &trans      &trans  &trans  &kakko3jp  &kp LS(N7)     &kp LS(NUMBER_2)  &trans
+&trans  &trans  &trans            &trans            &trans  &trans      &trans  &trans                                              &trans
             >;
         };
 
