@@ -79,39 +79,11 @@
             label = "KP_exit_AML";
         };
 
-        kakko1jp: kakko {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp LS(N8) &kp LS(N9) &kp ENTER &kp LEFT>;
-            label = "KAKKO";
-        };
-
-        kakko2jp: kakko2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp INTERNATIONAL_4 &kp RIGHT_BRACKET &kp NUHS &kp ENTER &kp LEFT>;
-            label = "KAKKO2";
-        };
-
         kakko3jp: kakko3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp INTERNATIONAL_4 &kp LS(RIGHT_BRACKET) &kp LS(NUHS) &kp ENTER &kp LEFT>;
             label = "KAKKO3";
-        };
-
-        kakko1en: kakko1en {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp INTERNATIONAL_5 &kp LS(N8) &kp LS(N9) &kp LEFT>;
-            label = "KAKKO1EN";
-        };
-
-        kakko2en: kakko2en {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp INTERNATIONAL_5 &kp RIGHT_BRACKET &kp NUHS &kp LEFT>;
-            label = "KAKKO2EN";
         };
 
         kakko3en: kakko3en {
@@ -186,10 +158,10 @@
 
         SYMBOL {
             bindings = <
-&trans  &none   &kp LS(NUMBER_6)  &kp LS(N5)        &trans                      &trans  &kakko1jp  &kakko1en  &kp LESS_THAN  &kp GREATER_THAN
-&trans  &none   &kp LS(NUMBER_4)  &kp LEFT_BRACKET  &trans  &trans      &trans  &trans  &kakko2jp  &kakko2en  &kp SEMICOLON  &kp SQT
-&trans  &none   &kp EQUAL         &kp LS(INT1)      &trans  &trans      &trans  &trans  &kakko3jp  &kakko3en  &kp LS(N7)     &kp LS(NUMBER_2)
-&trans  &trans  &trans            &trans            &trans  &trans      &trans  &trans                                       &trans
+&trans  &none   &kp LS(NUMBER_6)  &kp LS(N5)        &trans                      &trans  &kp LS(N8)             &kp LS(N9)    &kp LESS_THAN  &kp GREATER_THAN
+&trans  &none   &kp LS(NUMBER_4)  &kp LEFT_BRACKET  &trans  &trans      &trans  &trans  &kp RIGHT_BRACKET      &kp NUHS      &kp SEMICOLON  &kp SQT
+&trans  &none   &kp EQUAL         &kp LS(INT1)      &trans  &trans      &trans  &trans  &kp LS(RIGHT_BRACKET)  &kp LS(NUHS)  &kp LS(N7)     &kp LS(NUMBER_2)
+&trans  &trans  &trans            &trans            &trans  &trans      &trans  &trans                                                      &trans
             >;
         };
 
