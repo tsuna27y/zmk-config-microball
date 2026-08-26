@@ -37,11 +37,6 @@
             key-positions = <3 2>;
         };
 
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <40 41>;
-        };
-
         tab_right {
             bindings = <&kp LC(TAB)>;
             key-positions = <17 18>;
@@ -50,6 +45,12 @@
         tab_left {
             bindings = <&kp LC(LS(TAB))>;
             key-positions = <14 13>;
+        };
+
+        to_scroll {
+            bindings = <&to 5>;
+            key-positions = <7 19>;
+            layers = <0>;
         };
     };
 
@@ -77,20 +78,6 @@
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_exit_AML";
-        };
-
-        kakko3jp: kakko3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp INTERNATIONAL_4 &kp LS(RIGHT_BRACKET) &kp LS(NUHS) &kp ENTER &kp LEFT>;
-            label = "KAKKO3";
-        };
-
-        kakko3en: kakko3en {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp INTERNATIONAL_5 &kp LS(RIGHT_BRACKET) &kp LS(NUHS) &kp LEFT>;
-            label = "KAKKO3EN";
         };
     };
 
@@ -186,7 +173,7 @@
         SCROLL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &to 0   &trans  &trans      &trans  &trans  &to 0   &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
