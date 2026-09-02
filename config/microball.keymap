@@ -3,7 +3,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 // I長押しでSCROLLを固定するまでの時間(ms)
-#define SCROLL_HOLD_TIME 500
+#define SCROLL_HOLD_TIME 5000
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
